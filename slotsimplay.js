@@ -51,6 +51,7 @@ var Sim = new function()
 	this._workers = [];
 	this._workerFiles = [];
 
+	//debugger;
 	// class variable - params object for simulation settings
 	this.params = {}
 	
@@ -121,9 +122,11 @@ var Sim = new function()
 	}
 	
 	// start simulation
-	this.simulate = () => {
+	this.simulate = function() {
 		this.games = JSON.parse(this.simulations[0]);
+		
 		this.start.call(Sim);
+		//this.start();
 	}
 
 	// start the simulation
@@ -131,8 +134,6 @@ var Sim = new function()
 
 		this.startedAt = Date.now();
 		this.started = true;
-		
-		
 		
 		// wArgs is args array from old software versions. 
 		// adapt properly.
@@ -244,6 +245,10 @@ let testData = {
 	rngMode:0,
 	logRngDebug:false
 }
+
+console.log("Instantiating");
+//debugger;
+//let simulation = new Sim();
 
 Sim.init(testData)
 Sim.simulate();
