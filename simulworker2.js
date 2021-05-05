@@ -10,7 +10,7 @@ console.log("in worker port="+ parentPort + " data=" + JSON.stringify(workerData
 
 debugger;
 
-var code = fs.readFileSync('./tekst.txt').toString(); 
+var code = fs.readFileSync('./text.txt').toString(); 
 // execute this code
 console.log(`File=${code}`);
 

@@ -45,6 +45,7 @@ var _require = require;
 require = function(a) {
     if (a == 'worker_threads') {
 
+        console.log("rewriting ");
         return {
 			parentPort:{
 				postMessage: function(msg){
@@ -72,6 +73,7 @@ var code = fs.readFileSync(__dirname + '/simulworker2.js').toString();
 // execute this code
 console.log("execute the code");
 eval(code);
+console.log("done - execute the code");
 
 // return require back to normal
 require = _require;
